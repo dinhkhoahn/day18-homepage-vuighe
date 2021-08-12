@@ -71,10 +71,12 @@ div img {
     font-weight: 400;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 /* Nav - start */
-.nav-container {
-    position: fixed;
-    left: calc(50% - 655px);
+.nav-outer {
     background-color: white;
     z-index: 100;
 }
@@ -123,7 +125,6 @@ div img {
     cursor: pointer;
     background-color: #BFBFBF;
     text-align: center;
-    padding-top: 5px;
     margin-left: 7px;
 }
 
@@ -135,8 +136,36 @@ div img {
     background-color: #EEEEEE;
 }
 
+.list-nav {
+    display: none;
+}
+
 /* Nav - end */
 
+/* Nav Burger - start */
+.nav-burger {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 300px;
+    background-color: white;
+    z-index: 100;
+    transition: 0.25s;
+    margin-left: -300px;
+}
+
+.marginLeft-0 {
+    margin-left: 0;
+}
+
+.close-burger-nav {
+    right: 15px;
+    top: 8px;
+}
+
+.search-nav-burger {
+    top: 6px;
+    right: 5px;
+}
+/* Nav Burger - end */
 
 /* Form - start */
 
@@ -147,14 +176,16 @@ div img {
     top: 0;
     bottom: 0;
     width: 300px;
-    display: none;
+    margin-right: -300px;
     z-index: 101;
     background-color: white;
+    transition: 0.25s;
 }
 
-.show {
-    display: block;
+.marginRight-0 {
+    margin-right: 0;
 }
+
 
 .hello {
     background-image: url('img/nav/navbar-user-header.jpg');
@@ -316,16 +347,22 @@ div img {
     bottom: 15px;
 }
 
-.play-button div i {
+/* .play-button div i {
     display: inline-block;
     width: 70px;
     height: 70px;
-    font-size: 60px;
+    font-size: 50px;
     background-color: rgba(0,0,0,.6);
     border-radius: 50%;
-    text-align: center;
     color: white;
-    padding-left: 8px;
+    padding-left: 13px;
+} */
+
+.play-button div i {
+    width: 70px;
+    height: 70px;
+    font-size: 45px;
+    background-color: rgba(0,0,0,.6);
 }
 
 .luot-xem {
@@ -370,6 +407,15 @@ div img {
     transition: opacity 0.3s;
 }
 
+.video-play {
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+}
+
 .movie-play .bi-play-fill {
     margin-left: 5px;
 }
@@ -379,7 +425,7 @@ div img {
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 20px 10px;
+    padding: 20px 10px 5px 10px;
     background-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.75),
@@ -725,8 +771,9 @@ div img {
         height: 120px;
         padding: 0;
     }
-    
+
     .img-ranking {
+        flex-basis: 100%;
         opacity: 0.6;
         overflow: hidden;
     }
@@ -740,6 +787,10 @@ div img {
 
 /* Style cho màn hình lớn hơn 1200px - lg - large */
 @media (min-width: 1310px) {
+    .list-nav {
+        display: flex;
+    }
+
     .container {
         max-width: 1310px;
     }
